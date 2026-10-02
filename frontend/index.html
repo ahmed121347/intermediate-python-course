@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QYADA (قيادة) - Construction Enterprise Operating System</title>
+  <!-- FontAwesome & Chart.js CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div id="app-container">
+    <!-- 250px Luxury Dark-Gold Sidebar -->
+    <aside class="sidebar">
+      <div class="brand-header">
+        <div class="brand-logo">
+          <i class="fa-solid fa-crown"></i>
+          <span>قيادة QYADA</span>
+        </div>
+        <div class="brand-subtitle">Enterprise OS for Construction</div>
+      </div>
+
+      <!-- Hierarchical Expandable/Collapsible Navigation Tree -->
+      <nav class="nav-tree" id="nav-tree-container">
+        <!-- Tree items generated dynamically by app.js -->
+      </nav>
+
+      <div style="border-top: 1px solid rgba(183, 139, 46, 0.3); padding-top: 15px; margin-top: 15px;">
+        <div class="tree-header" id="nav-settings">
+          <div class="node-title">
+            <i class="fa-solid fa-gear node-icon"></i>
+            <span class="lang-text" data-ar="الإعدادات والصلاحيات" data-en="Settings & RBAC">الإعدادات والصلاحيات</span>
+          </div>
+        </div>
+        <div class="tree-header" id="nav-help">
+          <div class="node-title">
+            <i class="fa-solid fa-circle-question node-icon"></i>
+            <span class="lang-text" data-ar="الدعم والتعليمات" data-en="Help & Support">الدعم والتعليمات</span>
+          </div>
+        </div>
+        <div style="font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 10px;">
+          Version 2025.2.1 Enterprise
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace Area -->
+    <div class="main-wrapper">
+      <!-- 80px Top Header Bar -->
+      <header class="top-header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <i class="fa-solid fa-bars" style="font-size: 20px; color: var(--gold-accent); cursor: pointer;"></i>
+          <div class="header-search">
+            <input type="text" id="global-search" placeholder="بحث شامل في المشاريع، المشتريات، العقود..." data-placeholder-ar="بحث شامل في المشاريع، المشتريات، العقود..." data-placeholder-en="Search projects, procurement, contracts...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+
+        <div class="header-widgets">
+          <!-- Active Company Switcher -->
+          <select id="company-switcher" class="ctx-selector">
+            <option value="1">مجموعة قيادة القابضة ش.م.ح</option>
+            <option value="2" selected>قيادة للمقاولات العامة ذ.م.م</option>
+            <option value="3">قيادة لمصانع الرخام والجرانيت</option>
+            <option value="4">قيادة لصناعة وتشكيل الحديد</option>
+            <option value="5">قيادة للنقليات والمعدات الثقيلة</option>
+          </select>
+
+          <!-- Branch Switcher -->
+          <select id="branch-switcher" class="ctx-selector">
+            <option value="1">الفرع الرئيسي - أبوظبي</option>
+            <option value="2" selected>فرع دبي - المقاولات</option>
+            <option value="3">فرع الشارقة - المقاولات</option>
+          </select>
+
+          <!-- Weather & Live AED Currency -->
+          <div class="widget-item">
+            <i class="fa-solid fa-sun"></i>
+            <span>31°C أبوظبي</span>
+          </div>
+          <div class="widget-item">
+            <i class="fa-solid fa-coins"></i>
+            <span>AED 1.00</span>
+          </div>
+
+          <!-- Time & Clock -->
+          <div class="widget-item">
+            <i class="fa-regular fa-clock"></i>
+            <span id="live-clock">10:45 AM</span>
+          </div>
+
+          <!-- Language Switcher Button -->
+          <button id="btn-toggle-lang" class="btn-lang-toggle">English</button>
+
+          <!-- User Profile Indicator -->
+          <div class="widget-item" style="border-color: var(--gold-accent);">
+            <i class="fa-solid fa-user-gear"></i>
+            <span id="user-display-name">سعادة د. سلطان القاسمي</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- 12 Quick Access Shortcuts Bar -->
+      <div class="quick-access-bar" id="quick-access-bar">
+        <!-- 12 Shortcuts populated via JS -->
+      </div>
+
+      <!-- Content Workspace -->
+      <main class="workspace" id="workspace-view">
+        <!-- Dynamic views rendered here -->
+      </main>
+    </div>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+  <script src="/static/js/charts.js"></script>
+  <script src="/static/js/dashboard.js"></script>
+  <script src="/static/js/departments.js"></script>
+  <script src="/static/js/ai_chat.js"></script>
+</body>
+</html>
